@@ -1,9 +1,9 @@
-import { Column, Entity, OneToMany, PrimaryColumn } from "typeorm";
+import { Column, Entity, OneToMany, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
 import { Compra } from "./compra.entity";
 
 @Entity()
 export class Proveedor{
-    @PrimaryColumn()
+    @PrimaryGeneratedColumn()
     id:number
 
     @Column({type:'varchar'})

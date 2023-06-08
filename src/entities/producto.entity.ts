@@ -1,24 +1,24 @@
-import { Column, Entity, ManyToOne, OneToMany, PrimaryColumn } from "typeorm";
+import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn} from "typeorm";
 import { Category } from "./category.entity";
 import { Detalle_Venta } from "./detalle_venta.entity";
 import { Precio } from "./precio.entity";
 
 @Entity()
 export class Producto{
-    @PrimaryColumn()
-    id:number;
+    @PrimaryGeneratedColumn()
+    id:number
 
     @Column({type: 'varchar'})
     name:string
 
     @Column({type: 'varchar', nullable:true})
-    code:string
-
-    @Column({type: 'text', nullable:true})
-    description:string
-
+    codigo:string
+    
     @Column({type:'int'})
     cantidad:number
+
+    @Column({type:'int'})
+    idcategory:number
 
 
     //La relacion de muchos productos tienen una categoria

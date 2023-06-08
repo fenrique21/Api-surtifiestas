@@ -6,7 +6,7 @@ import { Producto } from "./producto.entity";
 @Entity()
 export class Venta{
 
-    @PrimaryColumn()
+  @PrimaryGeneratedColumn()
     id:number;
 
     @Column({type:'int'})
@@ -23,9 +23,6 @@ export class Venta{
 
     @Column({type:'float'})
     total:number
-
-    @Column({type:'float', nullable:true})
-    descuento:number
 
        //la relacion de un venta tiene muchos detalles_ventas
      @OneToMany(()=> Detalle_Venta, (detalle_venta:Detalle_Venta)=> detalle_venta.venta)

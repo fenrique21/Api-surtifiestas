@@ -1,4 +1,4 @@
-import { Column, Double, Entity, ManyToOne, PrimaryColumn } from "typeorm";
+import { Column, Double, Entity, ManyToOne, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
 import { Compra } from "./compra.entity";
 import { Producto } from "./producto.entity";
 import { Venta } from "./venta.entity";
@@ -6,9 +6,9 @@ import { Venta } from "./venta.entity";
 @Entity()
 export class Detalle_Compra{
 
-    @PrimaryColumn()
-    id:number 
-
+    @PrimaryGeneratedColumn()
+    id:number
+    
     @Column({type:'int'})
     id_producto:number
 

@@ -1,11 +1,11 @@
-import { Column, Double, Entity, ManyToOne, PrimaryColumn } from "typeorm";
+import { Column, Double, Entity, ManyToOne, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
 import { Producto } from "./producto.entity";
 import { Venta } from "./venta.entity";
 
 @Entity()
 export class Detalle_Venta{
-
-    @PrimaryColumn()
+    
+    @PrimaryGeneratedColumn()
     id:number
     
     @Column({type:'int'})

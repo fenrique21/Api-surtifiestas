@@ -1,17 +1,17 @@
 import { type } from "os";
-import { Column, Entity, OneToMany, PrimaryColumn } from "typeorm";
+import { Column, Entity, OneToMany, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
 import { Producto } from "./producto.entity";
 
 @Entity()
 export class Category{
 
-    @PrimaryColumn()
+    @PrimaryGeneratedColumn()
     id:number
 
     @Column({type:'varchar'})
-    name: string;
+    category: string;
 
     @OneToMany(()=> Producto, (producto: Producto)=> producto.category)
-    producto: Category[]
+    producto: Category[] 
 
 }

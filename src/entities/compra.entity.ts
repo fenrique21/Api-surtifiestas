@@ -8,7 +8,7 @@ import { Proveedor } from "./proveedor.entity";
 @Entity()
 export class Compra{
 
-    @PrimaryColumn()
+  @PrimaryGeneratedColumn()
     id:number;
 
     @Column({type:'int'})
